@@ -2,7 +2,14 @@ let displayName: string = 'Display name'
 let inventoryType: string = 'furniture'
 let trackingNumber: string = 'A12345'
 let createDate: Date = new Date()
-let originalCost: number = 100
+let originalCost: number | string = 100
+
+enum InventoryItemType {
+    Decor = "decor",
+    Furniture = "furniture"
+}
+
+type Cost = number | string
 
 interface InventoryItem {
     displayName: string 
