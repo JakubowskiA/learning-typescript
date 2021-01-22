@@ -4,17 +4,21 @@ let trackingNumber: string = 'A12345'
 let createDate: Date = new Date()
 let originalCost: number = 100
 
-function getInventoryItem(trackingNumber: string): {
+interface InventoryItem {
     displayName: string 
     inventoryType: string 
-    trackingNumber: string 
+    readonly trackingNumber: string 
     createDate: Date 
-    originalCost: number
-} {
+    originalCost?: number  //adding ? makes property optional
+
+    addNote?: (note: string) => string
+}
+
+function getInventoryItem(trackingNumber: string): InventoryItem {
     return null
 }
 
-function saveInventoryItem(item){
+function saveInventoryItem(item: InventoryItem){
     
 }
 
